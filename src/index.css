@@ -455,13 +455,38 @@ main {
 .project {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 24px;
+  padding: 0;
+  overflow: hidden;
   box-shadow: var(--shadow);
   transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.project__media {
+  margin: 0;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--border);
+}
+
+.project__media > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.project__thumbs {
+  display: flex;
+  gap: 2px;
+}
+
+.project__thumbs img {
+  width: 50%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-top: 2px solid var(--card);
 }
 
 .project:hover {
@@ -472,6 +497,11 @@ main {
 
 .project--featured {
   border-top: 3px solid var(--accent);
+}
+
+.project__body {
+  padding: 22px 24px 0;
+  flex: 1;
 }
 
 .project__head {
@@ -520,7 +550,7 @@ main {
 .project__links {
   display: flex;
   gap: 18px;
-  margin-top: 18px;
+  padding: 16px 24px 22px;
 }
 
 .project__links a {

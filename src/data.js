@@ -99,9 +99,12 @@ export const projects = [
   {
     title: "3-Speed Go-Kart",
     description:
-      "Engineered and fabricated a custom 3-speed go-kart — designing the chassis, steering, braking, and drivetrain through welding, machining, and 3D printing. Developed the 3-speed transmission in SolidWorks and validated a 50 km/h target through structured speed, braking, and handling tests.",
+      "Engineered and fabricated a custom gas-powered go-kart from the ground up — chassis, steering, braking, and a custom multi-speed drivetrain. Designed a 3-speed chain-and-gear transmission in SolidWorks (researching gear ratios and torque delivery), then built it with welding, machining, and 3D printing. Validated a 50 km/h target through structured speed, braking, and handling tests.",
     tags: ["SolidWorks", "Drivetrain", "Fabrication"],
     period: "Jun – Aug 2024",
+    // Images live in /public — drop the files in and they appear automatically.
+    images: ["gokart-1.jpg", "gokart-2.jpg", "gokart-3.jpg"],
+    video: "https://vimeo.com/1007884590/98cbb54c50",
     link: "",
     repo: "",
     featured: true,
