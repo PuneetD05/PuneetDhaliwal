@@ -4,7 +4,7 @@ export default function Skills() {
   return (
     <section id="skills" className="section">
       <div className="section__head">
-        <span className="section__num">02</span>
+        <span className="section__num">04</span>
         <h2 className="section__title">Skills</h2>
       </div>
 

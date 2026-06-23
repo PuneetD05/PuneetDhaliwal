@@ -4,73 +4,108 @@
 // ─────────────────────────────────────────────────────────────
 
 export const profile = {
-  name: "Your Name",
-  role: "Engineering Student",
+  name: "Puneet Dhaliwal",
+  role: "Mechanical Engineering Student",
+  // Short, punchy intro line — like your friends' sites.
   tagline:
-    "I build things that solve real problems — from hardware prototypes to full-stack web apps.",
-  location: "Your City, Country",
+    "Mechanical Engineering student at the University of Toronto, driven by hands-on design, manufacturing, and building things that move.",
+  location: "Toronto, ON",
   email: "you@example.com",
-  resumeUrl: "", // optional: link to a PDF, e.g. "/resume.pdf"
+  photo: "", // optional: put a headshot in /public and set e.g. "/headshot.jpg"
+  resumeUrl: "", // optional: put a PDF in /public and set e.g. "/resume.pdf"
   socials: {
-    github: "https://github.com/yourusername",
+    github: "https://github.com/PuneetD05",
     linkedin: "https://linkedin.com/in/yourusername",
   },
 };
 
+export const education = {
+  school: "University of Toronto",
+  degree: "B.A.Sc. Mechanical Engineering",
+  detail: "Expected 2027",
+};
+
 export const about = [
-  "I'm an engineering student passionate about turning ideas into working products. I enjoy the full journey — sketching a concept, prototyping, and shipping something people can actually use.",
-  "Outside of coursework I work on personal projects to sharpen my skills in software, electronics, and design. I'm always looking for the next problem worth solving.",
+  "I'm a Mechanical Engineering student at the University of Toronto with a passion for turning ideas into real, working hardware — from CAD models and prototypes to fully manufactured assemblies.",
+  "I specialize in mechanical design and manufacturing, and I love the hands-on side of engineering: machining parts, running analyses, and seeing a design come together on the bench.",
 ];
 
-// Grouped skills. Add or remove groups and items freely.
+// Work experience & design teams — the heart of a mechanical eng portfolio.
+// Listed newest first.
+export const experience = [
+  {
+    role: "Mechanical Design Intern",
+    org: "Company Name",
+    period: "Summer 2025",
+    points: [
+      "Designed and prototyped components in SolidWorks for production hardware.",
+      "Ran tolerance analysis and prepared drawings for manufacturing.",
+    ],
+  },
+  {
+    role: "Mechanical Team Member",
+    org: "UofT Design Team (e.g. Formula Racing / Supermileage)",
+    period: "2024 – Present",
+    points: [
+      "Contributed to the design and fabrication of vehicle subsystems.",
+      "Collaborated across a multidisciplinary team to hit competition deadlines.",
+    ],
+  },
+];
+
+// Grouped skills, mechanical-engineering focused.
 export const skills = [
   {
-    category: "Languages",
-    items: ["JavaScript", "Python", "C / C++", "HTML & CSS", "SQL"],
+    category: "Design & CAD",
+    items: ["SolidWorks", "AutoCAD", "Fusion 360", "GD&T", "Technical Drawing"],
   },
   {
-    category: "Frameworks & Tools",
-    items: ["React", "Node.js", "Git & GitHub", "Vite", "Arduino"],
+    category: "Manufacturing",
+    items: ["3D Printing", "CNC Machining", "Lathe & Mill", "Welding", "Prototyping"],
   },
   {
-    category: "Engineering",
-    items: ["CAD / SolidWorks", "Circuit Design", "3D Printing", "Data Analysis"],
+    category: "Analysis & Tools",
+    items: ["FEA (Ansys)", "MATLAB", "Thermodynamics", "Statics & Dynamics"],
+  },
+  {
+    category: "Programming",
+    items: ["Python", "C / C++", "Arduino"],
   },
 ];
 
-// Your projects. The first 1–2 with `featured: true` get a larger card.
+// Your projects. Mechanical-flavoured examples — swap in your own.
 export const projects = [
-  {
-    title: "Smart Home Dashboard",
-    description:
-      "A web dashboard that monitors and controls IoT devices around the house in real time. Built the frontend in React and the device API in Node.js.",
-    tags: ["React", "Node.js", "IoT"],
-    link: "",
-    repo: "",
-    featured: true,
-  },
   {
     title: "Line-Following Robot",
     description:
-      "An autonomous robot using infrared sensors and a PID control loop to follow a track. Designed the chassis in CAD and programmed the microcontroller in C.",
-    tags: ["Arduino", "C", "Robotics"],
+      "Autonomous robot using infrared sensors and a PID control loop to follow a track. Designed the chassis in SolidWorks and programmed the microcontroller in C.",
+    tags: ["SolidWorks", "Mechatronics", "C"],
     link: "",
     repo: "",
     featured: true,
   },
   {
-    title: "Study Planner App",
+    title: "CNC Router Design",
     description:
-      "A productivity app that breaks coursework into scheduled study blocks and tracks progress over the semester.",
-    tags: ["JavaScript", "UI Design"],
+      "A 3-axis desktop CNC router designed from the ground up — frame, motion system, and spindle mount modeled in CAD and validated with FEA.",
+    tags: ["CAD", "FEA", "Manufacturing"],
+    link: "",
+    repo: "",
+    featured: true,
+  },
+  {
+    title: "IC Engine Teardown & Analysis",
+    description:
+      "Disassembled a small internal-combustion engine, measured key components, and analyzed the thermodynamic cycle to characterize performance.",
+    tags: ["Thermodynamics", "Analysis"],
     link: "",
     repo: "",
   },
   {
-    title: "Weather Data Visualizer",
+    title: "Robotic Gripper",
     description:
-      "Pulls live weather data from an open API and renders interactive charts to spot trends over time.",
-    tags: ["Python", "Data Analysis"],
+      "A compact 3D-printed robotic gripper with a linkage mechanism, optimized for grip force and range through iterative prototyping.",
+    tags: ["3D Printing", "Mechanism Design"],
     link: "",
     repo: "",
   },

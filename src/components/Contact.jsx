@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section section--contact">
       <div className="section__head">
-        <span className="section__num">04</span>
+        <span className="section__num">05</span>
         <h2 className="section__title">Get in Touch</h2>
       </div>
 

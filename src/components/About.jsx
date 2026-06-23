@@ -1,4 +1,4 @@
-import { about, profile } from "../data";
+import { about, education, profile } from "../data";
 
 export default function About() {
   return (
@@ -14,13 +14,16 @@ export default function About() {
             <p key={i}>{para}</p>
           ))}
         </div>
+
         <aside className="about__card">
-          <h3>Quick Facts</h3>
+          <h3>Education</h3>
+          <p className="about__degree">{education.degree}</p>
+          <p className="about__school">{education.school}</p>
+          <p className="about__detail">{education.detail}</p>
+
+          <hr />
+
           <ul>
-            <li>
-              <span>Role</span>
-              {profile.role}
-            </li>
             <li>
               <span>Location</span>
               {profile.location}
