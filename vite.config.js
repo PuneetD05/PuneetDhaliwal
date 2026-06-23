@@ -3,5 +3,8 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Repo name — needed so assets load correctly on GitHub Pages
+  // (site is served from https://<user>.github.io/PuneetDhaliwal/).
+  base: '/PuneetDhaliwal/',
   plugins: [react()],
 })
