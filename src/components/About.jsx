@@ -20,6 +20,14 @@ export default function About() {
           <p className="about__degree">{education.degree}</p>
           <p className="about__school">{education.school}</p>
           <p className="about__detail">{education.detail}</p>
+          {education.honours && (
+            <p className="about__honours">🏅 {education.honours}</p>
+          )}
+          {education.courses && (
+            <p className="about__courses">
+              <strong>Relevant coursework:</strong> {education.courses}
+            </p>
+          )}
 
           <hr />
 
@@ -32,6 +40,12 @@ export default function About() {
               <span>Email</span>
               <a href={`mailto:${profile.email}`}>{profile.email}</a>
             </li>
+            {profile.phone && (
+              <li>
+                <span>Phone</span>
+                <a href={`tel:${profile.phone}`}>{profile.phone}</a>
+              </li>
+            )}
           </ul>
         </aside>
       </div>

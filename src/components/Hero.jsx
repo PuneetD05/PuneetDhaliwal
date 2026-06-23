@@ -8,13 +8,21 @@ function initials(name) {
     .join("");
 }
 
+// Resolve a file in /public to the correct URL (handles the GitHub Pages base
+// path). Leaves full http(s) links untouched.
+export function asset(path) {
+  if (!path) return "";
+  if (/^https?:\/\//.test(path)) return path;
+  return import.meta.env.BASE_URL + path.replace(/^\//, "");
+}
+
 export default function Hero() {
   return (
     <section id="top" className="hero">
       <div className="hero__inner">
         <div className="hero__avatar">
           {profile.photo ? (
-            <img src={profile.photo} alt={profile.name} />
+            <img src={asset(profile.photo)} alt={profile.name} />
           ) : (
             <span>{initials(profile.name)}</span>
           )}
@@ -35,7 +43,7 @@ export default function Hero() {
             </a>
             {profile.resumeUrl && (
               <a
-                href={profile.resumeUrl}
+                href={asset(profile.resumeUrl)}
                 className="btn btn--ghost"
                 target="_blank"
                 rel="noreferrer"

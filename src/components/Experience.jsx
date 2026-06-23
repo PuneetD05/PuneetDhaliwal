@@ -19,6 +19,9 @@ export default function Experience() {
                 </h3>
                 <span className="timeline__period">{job.period}</span>
               </div>
+              {job.location && (
+                <p className="timeline__location">{job.location}</p>
+              )}
               <ul>
                 {job.points.map((p, j) => (
                   <li key={j}>{p}</li>

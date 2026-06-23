@@ -4,7 +4,12 @@ function ProjectCard({ project }) {
   return (
     <article className={`project ${project.featured ? "project--featured" : ""}`}>
       <div className="project__body">
-        <h3 className="project__title">{project.title}</h3>
+        <div className="project__head">
+          <h3 className="project__title">{project.title}</h3>
+          {project.period && (
+            <span className="project__period">{project.period}</span>
+          )}
+        </div>
         <p className="project__desc">{project.description}</p>
         <ul className="project__tags">
           {project.tags.map((t) => (

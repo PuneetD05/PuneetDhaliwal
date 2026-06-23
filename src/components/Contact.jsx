@@ -1,4 +1,5 @@
 import { profile } from "../data";
+import { asset } from "./Hero";
 
 export default function Contact() {
   return (
@@ -10,20 +11,27 @@ export default function Contact() {
 
       <div className="contact">
         <p>
-          I'm always open to new projects, collaborations, or just a chat about
-          engineering. Feel free to reach out.
+          I'm actively looking for mechanical engineering co-op and internship
+          opportunities. Whether you're hiring, collaborating, or just want to
+          talk shop — I'd love to hear from you.
         </p>
         <a href={`mailto:${profile.email}`} className="btn btn--primary">
-          Say Hello
+          Email Me
         </a>
 
         <div className="contact__socials">
-          <a href={profile.socials.github} target="_blank" rel="noreferrer">
-            GitHub
-          </a>
           <a href={profile.socials.linkedin} target="_blank" rel="noreferrer">
             LinkedIn
           </a>
+          <a href={profile.socials.github} target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          {profile.resumeUrl && (
+            <a href={asset(profile.resumeUrl)} target="_blank" rel="noreferrer">
+              Résumé
+            </a>
+          )}
+          {profile.phone && <a href={`tel:${profile.phone}`}>{profile.phone}</a>}
         </div>
       </div>
     </section>
