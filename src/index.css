@@ -464,6 +464,18 @@ main {
   transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
+.project__video {
+  background: #000;
+  border-bottom: 1px solid var(--border);
+}
+
+.project__video video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
 .project__media {
   margin: 0;
   background: var(--bg-soft);

@@ -104,7 +104,7 @@ export const projects = [
     period: "Jun – Aug 2024",
     // Images live in /public — drop the files in and they appear automatically.
     images: ["gokart-1.jpg", "gokart-2.jpg", "gokart-3.jpg"],
-    video: "https://vimeo.com/1007884590/98cbb54c50",
+    videoFile: "gokart-demo.mp4", // embedded player (file in /public)
     link: "",
     repo: "",
     featured: true,
