@@ -8,7 +8,7 @@ export const profile = {
   role: "Mechanical Engineering Student",
   // Short, recruiter-facing intro line.
   tagline:
-    "Mechanical Engineering student at the University of Toronto specializing in mechanical design, CFD, and precision manufacturing — turning concepts into real, tested hardware.",
+    "Mechanical engineering student at the University of Toronto. I turn ideas into machined, tested, working hardware — from CFD-tuned aero bodywork to custom-built drivetrains.",
   location: "Toronto, ON",
   email: "Puneetdhaliwal05@gmail.com",
   phone: "289-388-4159",
@@ -30,8 +30,8 @@ export const education = {
 };
 
 export const about = [
-  "I'm a Mechanical Engineering student at the University of Toronto (PEY Co-op stream) who loves the full arc of engineering — from CAD and simulation to machining real parts and testing them on the bench.",
-  "On the U of T Supermileage team I design composite aero bodywork and run CFD; at EM Dynamics I machined aerospace and medical components to ±0.01 mm tolerances. Across my projects I've led teams, managed budgets and timelines, and consistently shipped working hardware.",
+  "I'm a mechanical engineering student at the University of Toronto who's happiest with a hard problem in front of me and a deadline on the calendar. What I love most is the full loop — sketching an idea, refining it in CAD, simulating it, then actually building and testing the real thing.",
+  "On the Supermileage team I design and run CFD on composite aero bodywork; at EM Dynamics I machined aerospace and medical parts to ±0.01 mm. Across my own projects I've led teams, owned budgets, and — above all — shipped hardware that works.",
 ];
 
 // Work experience & design teams — listed newest first.
@@ -42,9 +42,9 @@ export const experience = [
     location: "Toronto, ON",
     period: "Apr 2025 – Present",
     points: [
-      "Designed the aerodynamic body of the team's prototype vehicle in SolidWorks, producing assemblies and manufacturing drawings.",
-      "Ran CFD simulations in Ansys Fluent to guide design iterations, validating airflow behaviour and improving aerodynamic performance.",
-      "Fabricated composite body panels through mold design, layup, and curing — translating CAD models into lightweight structural components.",
+      "Designed the prototype vehicle's aerodynamic bodywork in SolidWorks, producing the assemblies and drawings the team manufactures from.",
+      "Ran Ansys Fluent CFD studies to steer design iterations — validating airflow behaviour and sharpening aerodynamic performance.",
+      "Built the composite panels hands-on through mold design, layup, and cure, turning CAD geometry into lightweight structural parts.",
     ],
   },
   {
@@ -53,14 +53,14 @@ export const experience = [
     location: "Scarborough, ON",
     period: "May 2024 – Sept 2025",
     points: [
-      "Set up and operated CNC milling machines for aerospace and medical components to tolerances within ±0.01 mm.",
-      "Interpreted engineering drawings and CAD models, performing root-cause analysis to adjust tooling, offsets, and machining parameters.",
-      "Supported quality assurance and AS9100 compliance while maximizing machine uptime.",
+      "Set up and ran CNC mills producing aerospace and medical components held to tolerances within ±0.01 mm.",
+      "Read engineering drawings and CAD models, tracing machining deviations to root cause and correcting tooling, offsets, and parameters.",
+      "Kept production AS9100-compliant while pushing machine uptime and consistent part quality.",
     ],
   },
 ];
 
-// Skills, mechanical-engineering focused (from resume + experience).
+// Skills, mechanical-engineering focused.
 export const skills = [
   {
     category: "Design & CAD",
@@ -84,47 +84,101 @@ export const skills = [
   },
 ];
 
-// Projects — newest / most impressive first.
+// ── Projects ──────────────────────────────────────────────────
+// Each has its own page at /projects/<slug>.
+//  - tagline:   one-liner shown on the home card
+//  - overview:  paragraph(s) for the project page
+//  - highlights: bullet points of what you actually did / achieved
+//  - images:    files in /public (first = cover)
+//  - videoFile: optional embedded video in /public
 export const projects = [
   {
+    slug: "strideassist",
     title: "StrideAssist — Adaptable Walking Exoskeleton",
-    description:
-      "Designed and developed a below-waist exoskeleton with adjustable lumbar width and reconfigurable leg-link mechanisms to support users with varying lower-limb lengths and mobility impairments.",
-    tags: ["SolidWorks", "Mechanism Design", "Biomechanics"],
-    period: "",
+    period: "Academic Project",
+    tagline: "A below-waist exoskeleton that adapts to the person wearing it.",
+    overview: [
+      "StrideAssist is a lower-body exoskeleton built around a single conviction: mobility aids shouldn't be one-size-fits-all. I designed an adjustable frame — variable lumbar width paired with reconfigurable leg-link mechanisms — so one device can fit users with very different lower-limb lengths and mobility needs.",
+      "The goal was a platform that meets people where they are, instead of forcing them to adapt to rigid hardware.",
+    ],
+    highlights: [
+      "Engineered adjustable lumbar width and modular leg-links to accommodate a wide range of body dimensions.",
+      "Modeled the full mechanism in SolidWorks with a focus on support, comfort, and safe load paths.",
+      "Grounded every design decision in real accessibility needs for users with lower-limb mobility impairments.",
+    ],
+    tags: ["SolidWorks", "Mechanism Design", "Biomechanics", "Accessibility"],
+    images: [],
+    videoFile: "",
     link: "",
     repo: "",
     featured: true,
   },
   {
+    slug: "go-kart",
     title: "3-Speed Go-Kart",
-    description:
-      "Engineered and fabricated a custom gas-powered go-kart from the ground up — chassis, steering, braking, and a custom multi-speed drivetrain. Designed a 3-speed chain-and-gear transmission in SolidWorks (researching gear ratios and torque delivery), then built it with welding, machining, and 3D printing. Validated a 50 km/h target through structured speed, braking, and handling tests.",
-    tags: ["SolidWorks", "Drivetrain", "Fabrication"],
     period: "Jun – Aug 2024",
-    // Images live in /public — drop the files in and they appear automatically.
+    tagline: "A gas-powered kart with a transmission I designed and built from scratch.",
+    overview: [
+      "This project started as a question — could I build a working multi-speed transmission myself? — and ended as a fully drivable, gas-powered go-kart. I designed a three-speed chain-and-gear gearbox in SolidWorks, dialing in gear ratios to balance torque off the line against top-end speed.",
+      "From there it was all hands-on: I fabricated the chassis, steering, brakes, and drivetrain, with every part welded, machined, or 3D-printed myself.",
+    ],
+    highlights: [
+      "Designed a custom 3-speed chain-and-gear transmission in SolidWorks, sizing ratios for both torque and top speed.",
+      "Fabricated the chassis, steering, braking, and drivetrain using welding, machining, and 3D printing.",
+      "Hit a 50 km/h top-speed target and validated braking and handling through structured on-road testing.",
+    ],
+    tags: ["SolidWorks", "Drivetrain", "Fabrication", "Welding"],
     images: ["gokart-1.jpg", "gokart-2.jpg", "gokart-3.jpg"],
-    videoFile: "gokart-demo.mp4", // embedded player (file in /public)
+    videoFile: "gokart-demo.mp4",
     link: "",
     repo: "",
     featured: true,
   },
   {
+    slug: "cnc-router",
     title: "CNC Hobbyist Router",
-    description:
-      "Led a 4-person team over 12 weeks to deliver a prototype-ready CNC router for home hobbyists. Modeled the full assembly in SolidWorks (60+ parts, 20+ drawings) and managed a $4,200 budget to optimize for manufacturability and aluminum-cutting capability.",
-    tags: ["SolidWorks", "CAD", "Project Management"],
     period: "Sep – Dec 2024",
+    tagline: "An aluminum-capable CNC router designed to be affordable for hobbyists.",
+    overview: [
+      "Most desktop CNC routers either cost a fortune or can't touch metal. Leading a four-person team over twelve weeks, I set out to close that gap with a rigid, aluminum-capable router a hobbyist could actually afford.",
+      "I owned the full CAD model while keeping the team on schedule and the project on budget — turning a loose brief into a prototype-ready design package.",
+    ],
+    highlights: [
+      "Led a 4-person team for 12 weeks with weekly design reviews, task delegation, and Gantt scheduling.",
+      "Modeled the complete assembly in SolidWorks — 60+ parts and 20+ detailed drawings covering tolerances and joint interfaces.",
+      "Managed a $4,200 budget, optimizing part and material choices for manufacturability and aluminum-cutting rigidity.",
+    ],
+    tags: ["SolidWorks", "CAD", "Project Management", "Manufacturing"],
+    images: [],
+    videoFile: "",
     link: "",
     repo: "",
+    featured: false,
   },
   {
+    slug: "garage-ramp",
     title: "Garage Entrance / Exit Ramp",
-    description:
-      "Led a 6-member team as Project Manager to design a space-efficient parking ramp. Modeled a spiral ramp in SolidWorks, evaluating 120+ alternatives to reduce footprint by 67%, and validated continuous traffic flow with a 1:64 3D-printed prototype hitting a 40-second descent target.",
-    tags: ["SolidWorks", "Project Management", "Prototyping"],
     period: "Jan – May 2024",
+    tagline: "A space-saving spiral parking ramp, validated with a scaled prototype.",
+    overview: [
+      "Tasked with moving cars in and out of a tight footprint, my six-person team needed a ramp that was efficient, safe, and genuinely buildable. As project manager I kept the engagement on track with Gantt charts and weekly client updates.",
+      "On the technical side, I led the design — modeling a spiral ramp in SolidWorks and iterating hard before committing to a final layout.",
+    ],
+    highlights: [
+      "Led a 6-person team as Project Manager, using Gantt charts and weekly client check-ins to hit every deadline.",
+      "Evaluated 120+ design alternatives and selected a spiral ramp that reduced footprint by 67%.",
+      "Validated continuous traffic flow with a 1:64 3D-printed prototype, hitting the target 40-second descent.",
+    ],
+    tags: ["SolidWorks", "Project Management", "Prototyping"],
+    images: [],
+    videoFile: "",
     link: "",
     repo: "",
+    featured: false,
   },
 ];
+
+// Helper: look a project up by its slug (used by the project page).
+export function getProject(slug) {
+  return projects.find((p) => p.slug === slug);
+}

@@ -1,29 +1,25 @@
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Experience from "./components/Experience";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import ScrollToTop from "./components/ScrollToTop";
+import Home from "./pages/Home";
+import ProjectPage from "./pages/ProjectPage";
 import { profile } from "./data";
 
 export default function App() {
   return (
-    <>
+    <HashRouter>
+      <ScrollToTop />
       <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Contact />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects/:slug" element={<ProjectPage />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
       <footer className="footer">
         <p>
           © {new Date().getFullYear()} {profile.name}. Built with React & Vite.
         </p>
       </footer>
-    </>
+    </HashRouter>
   );
 }

@@ -1,4 +1,5 @@
 import { profile } from "../data";
+import { asset } from "../lib/asset";
 
 function initials(name) {
   return name
@@ -6,14 +7,6 @@ function initials(name) {
     .map((w) => w[0])
     .slice(0, 2)
     .join("");
-}
-
-// Resolve a file in /public to the correct URL (handles the GitHub Pages base
-// path). Leaves full http(s) links untouched.
-export function asset(path) {
-  if (!path) return "";
-  if (/^https?:\/\//.test(path)) return path;
-  return import.meta.env.BASE_URL + path.replace(/^\//, "");
 }
 
 export default function Hero() {

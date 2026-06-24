@@ -1,5 +1,5 @@
 import { profile } from "../data";
-import { asset } from "./Hero";
+import { asset } from "../lib/asset";
 
 export default function Contact() {
   return (
