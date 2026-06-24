@@ -13,17 +13,6 @@ function ProjectCard({ project }) {
 
   return (
     <article className={`project ${project.featured ? "project--featured" : ""}`}>
-      {project.videoFile && (
-        <div className="project__video">
-          <video
-            src={asset(project.videoFile)}
-            controls
-            preload="metadata"
-            playsInline
-          />
-        </div>
-      )}
-
       {images.length > 0 && (
         <figure className="project__media">
           <img
@@ -46,6 +35,17 @@ function ProjectCard({ project }) {
             </div>
           )}
         </figure>
+      )}
+
+      {project.videoFile && (
+        <div className="project__video">
+          <video
+            src={asset(project.videoFile)}
+            controls
+            preload="metadata"
+            playsInline
+          />
+        </div>
       )}
 
       <div className="project__body">
