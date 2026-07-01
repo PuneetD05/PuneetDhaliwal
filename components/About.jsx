@@ -1,4 +1,4 @@
-import { about, education, profile } from "../data";
+import { about, education, profile } from "@/lib/data";
 
 export default function About() {
   return (

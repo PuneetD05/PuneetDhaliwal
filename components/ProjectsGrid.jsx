@@ -1,26 +1,18 @@
-import { Link } from "react-router-dom";
-import { projects } from "../data";
-import { asset } from "../lib/asset";
+import Link from "next/link";
+import { projects } from "@/lib/data";
+import { asset } from "@/lib/asset";
 
 function ProjectCard({ project }) {
   const cover = project.images?.[0];
 
   return (
     <Link
-      to={`/projects/${project.slug}`}
+      href={`/projects/${project.slug}`}
       className={`pcard ${project.featured ? "pcard--featured" : ""}`}
     >
       <div className="pcard__media">
         {cover ? (
-          <img
-            src={asset(cover)}
-            alt={project.title}
-            loading="lazy"
-            onError={(e) => {
-              e.currentTarget.style.display = "none";
-              e.currentTarget.parentElement.classList.add("pcard__media--empty");
-            }}
-          />
+          <img src={asset(cover)} alt={project.title} loading="lazy" />
         ) : (
           <span className="pcard__placeholder">{project.title.charAt(0)}</span>
         )}

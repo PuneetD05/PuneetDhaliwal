@@ -1,5 +1,5 @@
-import { profile } from "../data";
-import { asset } from "../lib/asset";
+import { profile } from "@/lib/data";
+import { asset } from "@/lib/asset";
 
 function initials(name) {
   return name

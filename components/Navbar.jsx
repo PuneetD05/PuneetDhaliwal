@@ -1,6 +1,10 @@
+"use client";
+
 import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { profile } from "../data";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { profile } from "@/lib/data";
+import { asset } from "@/lib/asset";
 
 const sections = [
   { id: "about", label: "About" },
@@ -12,8 +16,8 @@ const sections = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { pathname } = useLocation();
-  const navigate = useNavigate();
+  const pathname = usePathname();
+  const router = useRouter();
   const onHome = pathname === "/";
 
   // Smooth-scroll to a section. If we're on a project page, go home first.
@@ -22,17 +26,16 @@ export default function Navbar() {
     if (onHome) {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     } else {
-      navigate("/");
-      // Wait for the home page to mount, then scroll.
+      router.push("/");
       setTimeout(() => {
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-      }, 60);
+      }, 80);
     }
   }
 
   return (
     <header className="nav">
-      <Link to="/" className="nav__brand" onClick={() => setOpen(false)}>
+      <Link href="/" className="nav__brand" onClick={() => setOpen(false)}>
         {profile.name}
       </Link>
 
@@ -56,7 +59,7 @@ export default function Navbar() {
         {profile.resumeUrl && (
           <a
             className="nav__resume"
-            href={import.meta.env.BASE_URL + profile.resumeUrl}
+            href={asset(profile.resumeUrl)}
             target="_blank"
             rel="noreferrer"
             onClick={() => setOpen(false)}

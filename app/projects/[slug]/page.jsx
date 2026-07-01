@@ -1,24 +1,25 @@
-import { useParams, Link } from "react-router-dom";
-import { getProject, projects } from "../data";
-import { asset } from "../lib/asset";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { getProject, projects } from "@/lib/data";
+import { asset } from "@/lib/asset";
 
-export default function ProjectPage() {
-  const { slug } = useParams();
+// Pre-render a page for every project at build time.
+export function generateStaticParams() {
+  return projects.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
   const project = getProject(slug);
+  return {
+    title: project ? `${project.title} · Puneet Dhaliwal` : "Project · Puneet Dhaliwal",
+  };
+}
 
-  if (!project) {
-    return (
-      <main className="project-page">
-        <p className="back-link">
-          <Link to="/#projects">← Back to projects</Link>
-        </p>
-        <h1>Project not found</h1>
-        <p className="muted">
-          That project doesn't exist. Head back and pick one from the list.
-        </p>
-      </main>
-    );
-  }
+export default async function ProjectPage({ params }) {
+  const { slug } = await params;
+  const project = getProject(slug);
+  if (!project) notFound();
 
   const images = project.images || [];
   const idx = projects.findIndex((p) => p.slug === slug);
@@ -27,7 +28,7 @@ export default function ProjectPage() {
   return (
     <main className="project-page">
       <p className="back-link">
-        <Link to="/#projects">← Back to projects</Link>
+        <Link href="/#projects">← Back to projects</Link>
       </p>
 
       <header className="project-hero">
@@ -98,7 +99,7 @@ export default function ProjectPage() {
         </div>
       )}
 
-      <Link to={`/projects/${next.slug}`} className="next-project">
+      <Link href={`/projects/${next.slug}`} className="next-project">
         <span>Next project</span>
         <strong>{next.title} →</strong>
       </Link>
